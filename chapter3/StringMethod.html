@@ -1,0 +1,27 @@
+<html>
+    <script>
+        let str = 'Hello World';
+        let str1 = 'Hello, World';
+        console.log('str ', str);
+        console.log('str [0] ', str[0]);
+        console.log('str[str.length-1] ', str[str.length-1]);
+        /* primitive can't call method . but string change temporily 
+        to Wrapper class at runtime and then can call method with .*/
+        console.log('substring(1,4) ',str.substring(1,4));//ell
+        console.log('substring(4,1) ',str.substring(4,1));//ell
+        console.log('slice(1,4) ',str.slice(1,4));//ell
+        console.log('slice(4,1) ',str.slice(4,1));//null
+        console.log('slice(1,-4) ',str.slice(1,-4));//ello W slice can accept minus -
+        console.log('slice(-4)' , str.slice(-4));//orld
+        console.log('substring(1,str.length) ',str.substring(1,str.length));//ell
+        console.log('str ', str);
+        console.log('split ',str.split(' '));
+        console.log('str 1 ', str1);
+        console.log('split(, ) ',str1.split(', '));
+        console.log('split(,) ',str1.split(','));
+        
+        let items = 'apple; orange; bananna';
+        console.log('split(;) ', items.split(';'));
+        console.log('split(; ) ', items.split('; '));
+</script>
+</html>

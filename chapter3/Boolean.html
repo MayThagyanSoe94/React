@@ -1,0 +1,42 @@
+<html>
+    <script>
+        /* false case
+        undefined
+        null
+        0
+        -0
+        NaN
+        "" // the empty string
+        */
+        let raining = false;
+        if(raining){
+            console.log('Take unbrella');
+        }
+        console.log('End of line');
+        raining = 100;
+        raining = 'false';
+        if(raining){
+            console.log( 'Take umbrella')
+        }else{
+            console.log(  'Do not take umbrella');
+        }
+        console.log('last end of line');
+        console.log('!!undefined ' , !!undefined);
+        console.log('!!null ' , !!null);
+        console.log('!!0 ' , !!0);
+        console.log('!!-0 ' , !!-1);
+        console.log('!!Nan ' , !!NaN);
+        console.log('!!"" ' , !!"");
+        console.log('!!"false" ' , !!"false");
+        console.log('!undefined ' , !undefined);
+        console.log('!null ' , !null);
+        console.log('!0 ' , !0);
+        console.log('!-0 ' , !-1);
+        console.log('!Nan ' , !NaN);
+        console.log('!"" ' , !"");
+        console.log('Boolean ("") ' , Boolean(""));
+
+        console.log('!"false" ' , !"false");
+
+    </script>
+</html>

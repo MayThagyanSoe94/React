@@ -1,0 +1,42 @@
+<html>
+    <script>
+        let a = 0.3;
+        console.log('Type of a ', typeof a);
+        let str = 'hello';
+        console.log(str);
+        str = 'hello "How are your?" ';
+        console.log(str);
+        str = "Hello";
+        console.log(str);
+        str = "Hello 'Hi'";
+        console.log(str);
+        str = "Hello \"Hi\" ";
+        console.log(str);
+        str = "Hello \"Hi\""
+        +"Another line";
+        console.log(str);
+        str = "Hello \"Hi\""
+        +"\nAnother line";
+        console.log(str);
+        str = "Hello \"Hi\" \nAnother line";
+        console.log(str);
+        let price = 100;
+        let quantity = 2;
+        let statement = "Price " + price
+                        +"\nQuantity "+ quantity
+                        +"\nTotal "+ (price * quantity);
+        console.log(statement);
+        statement = `Price ${price}
+                     Quantity ${quantity}
+                     Total ${price * quantity}`;
+        console.log(statement);
+        statement = `Price ${price}
+Quantity ${quantity}
+Total ${price * quantity}`;
+        console.log(statement);
+        statement = `Price ${price} Quantity ${quantity} Total ${price * quantity}`;
+        console.log(statement);
+        statement = `Price ${price} \nQuantity ${quantity} \nTotal ${price * quantity}`;
+        console.log(statement);
+    </script>
+</html>

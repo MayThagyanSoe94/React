@@ -1,0 +1,44 @@
+<html>
+    <script>
+
+        let str = 'Hello World';
+        console.log('str '. str);
+        console.log('indexof(e) ', str.indexOf('e'));
+        console.log('index(j) ', str.indexOf('j'));
+        console.log('indexof(o) ', str.indexOf('o'));
+        console.log('indexof(o,5) second o ', str.indexOf('o',5));
+        console.log('indexof(Hell) ', str.indexOf('Hell'));
+        console.log('lastIndexOf(l) ', str.lastIndexOf('l'));
+        console.log('includes ', str.includes('Hell'));
+        console.log('startWith Hell ', str.startsWith('Hell'));
+        console.log('startWith hell ', str.startsWith('hell'));
+        console.log('endWith World ', str.endsWith('World'));
+        console.log('endWith world ', str.endsWith('world'));
+        console.log('replace World to Earth', str.replace('World','Earth'));
+        console.log('endWith world to earth ', str.replace('world','earth'));
+        console.log('orginal str', str);
+        console.log('str lowercase ', str.toLowerCase());
+        console.log('str uppercase ', str.toUpperCase());
+        console.log('str toLocaleLowerCase ', str.toLocaleLowerCase());
+        console.log('str toLocaleUpperCase ', str.toLocaleUpperCase());
+        let str1 = "İstanbul";
+        console.log(str1.toLowerCase()); // Outputs: "i̇stanbul" (note the dot on the 'i')
+        console.log(str1.toLocaleLowerCase('tr-TR')); // Outputs: "istanbul" (correctly handles the Turkish locale)
+        
+        let dotted = 'İstanbul';
+        console.log(`EN-US: ${dotted.toLocaleLowerCase('en-US')}`);
+        // Expected output: "i̇stanbul"
+
+        console.log(`TR: ${dotted.toLocaleLowerCase('tr')}`);
+        // Expected output: "istanbul"
+        console.log('charAt(0) ', str.charAt(0));
+        console.log('str[0] ', str[0]);
+        console.log('charCodeAt(0) ', str.charCodeAt(0));
+        let str3 = 'Aa'
+        console.log('charCodeAt(A) ', str3.charCodeAt(0));
+        console.log('charCodeAt(a) ', str3.charCodeAt(1));
+        console.log('codePointAt(A) ', str3.codePointAt(0));
+        console.log('codePointAt(a) ', str3.codePointAt(1));
+
+    </script>
+</html>
