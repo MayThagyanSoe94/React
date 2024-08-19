@@ -1,0 +1,26 @@
+<html>
+    <script>
+        let obj = {
+            data: 20,
+            toString() {
+                console.log('ToString ');
+                //return `Data = ${this.data}`;
+                return '123';
+            },
+            valueOf() {
+                console.log('ValueOf ');
+                return {};
+            }
+        };
+        console.log('"" + obj ', "" + obj)
+        console.log('"" + obj ', + obj)
+        console.log('!!obj ', !!obj)
+        console.log('obj + 3 ', obj + 3);
+
+        /*
+        toString?
+        toString
+        123 -> number->123
+        */
+    </script>
+</html>
