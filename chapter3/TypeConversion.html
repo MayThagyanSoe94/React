@@ -1,0 +1,21 @@
+<html>
+<script>
+    let a = 10;
+    let b = "20";
+    console.log('a + b ', a + b);//string concat, a -> number -> string
+    console.log('a * b ', a * b);//number concat, b -> string -> number 
+    console.log(!!b);
+
+    a = -2;
+    console.log('a string ', '' + a);
+    console.log('+underfined', +undefined);//NaN
+    console.log('Number ',Number(undefined));//NaN, should not use this type
+    console.log('+null', +null);//0
+    console.log('+true ', +true);//1
+    console.log('false', +false);//0
+    console.log('+123 ', +'123');//123
+    console.log('123 Hello  ', +'123Hello');//NaN
+    console.log('', +'');//0
+</script>
+
+</html>
