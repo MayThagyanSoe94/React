@@ -1,0 +1,34 @@
+<html>
+    <script>
+        let a = '2';
+        let b = 2;
+        function hello(){
+            console.log('g >>> ', g);
+            var x = 100;
+            console.log('z >>> ',z);
+            console.log('Hello');
+            //console.log('another let block scope >>> ',another);
+            {
+                let y = 10;
+                y++;
+                const k = 30;
+                //k++;
+                //k = 11;
+                var g = 200;
+                console.log('y is ' , y);
+                something = 'something';
+            }
+            console.log('x >>> ', x);
+            var z = 30;//hoisting, apply in function(var)scope(only var)
+            var x = 600;
+            let another = 'Data';
+            //console.log('y is >>>', y )
+            console.log('x repeated variable >>> ',x);
+            console.log('G ',g);
+        };
+        //console.log('x >>> ', x);
+        hello();
+        console.log('something global >>> ',something);
+        console.log('window.something >>> ',window.something);
+    </script>
+</html>
