@@ -1,0 +1,22 @@
+<html>
+    <script>
+        function multiReturn(){
+            return [100,null]
+        }
+        let [data,error] = multiReturn();
+        console.log('data >>> ',data,"error >>> ",error);
+
+        let arr = [10,20,30];
+        let [, a,b] = arr;
+        console.log('A >>> ',a);
+        console.log('B >>> ',b);
+        let [x,y,...others] = arr;
+        console.log('X ',x,'Y ',y,'Others ',others);
+        let[j,[k,l]] = [1,[2,2.5],3];
+        console.log('J ',j,'K ',k,'L',l);
+        let [a1, [b1, c1]] = [1, [2,2.5], 3];
+        console.log('a1 ',a1,'b1 ',b1,'c1 ',c1);
+        let [first,...second] = 'Hello';
+        console.log('first >>> ',first,'second >>> ',second);
+    </script>
+</html>
