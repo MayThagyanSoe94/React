@@ -1,0 +1,25 @@
+<html>
+    <script>
+        console.log('"3" == 3', '3' == 3);// it can do type conversion
+        console.log('"3" === 3', '3' === 3);// it can't do type conversion
+
+        let obj = {
+            data : 30
+        }
+        let obj2 = obj;
+        console.log('obj === obj2' , obj === obj2);
+        obj2 = {
+            data : 30
+        }//change address
+        console.log('obj === obj2' , obj === obj2);
+
+        let str = new String('Hello');
+        let str2 = new String('Hello');
+        console.log('str == str2 ' , str === str2);
+
+        str = 'Hello';
+        str2 = 'Hell'+ 'o';
+        console.log('str == str2 ' , str === str2);
+
+    </script>
+</html>
