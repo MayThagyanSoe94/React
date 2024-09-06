@@ -1,18 +1,18 @@
 <html>
     <script>
         //Rule 1
-        console.log('3 == 3', 3 == 3);
+        console.log('3 == 3                 ', 3 == 3);
     
         //Rule 2 & 3
-        console.log('null == undefined ', null == undefined);
-        console.log('undefined == null ', undefined == null);
+        console.log('null == undefined      ', null == undefined);
+        console.log('undefined == null      ', undefined == null);
     
         //Rule 5 & 6
-        console.log('"3" == 3 ', "3" == 3);
-        console.log('"" == 0 ', "" == 0);
+        console.log('"3" == 3               ', "3" == 3);
+        console.log('"" == 0                ', "" == 0);
     
         //Rule 9 & 10
-        console.log('true == "1" ', true == "1");
+        console.log('true == "1"            ', true == "1");
         // boolean change to number, +true == "1"
         //"1"==1 -> 1 == 1
         //object && primitive
@@ -21,38 +21,46 @@
                 return false;
             }
         }
+        console.log("let obj = { \n\tvalueOf() { \n\t\treturn false; \n\t} \n};");
         /*
         ToPrimitive(obj)
         false == 0
         number(false) == 0
         0 == 0
         */
-        console.log("obj == 0", obj == 0);
+        console.log("obj == 0               ", obj == 0);
         //Rule 14 false
-        console.log('null == false', null == false);
+        console.log('null == false          ', null == false);
         /*
         null == number(fasle)
         */
-        console.log('undefined == false', undefined == false);
+        console.log('undefined == false     ', undefined == false);
         /*
         undefined == number(false);
         */
-        console.log('null == 0', null == 0);
+        console.log('null == 0              ', null == 0);
         /*
         number(null) == 0
         0 == 0 but is not the same
         undefied , null != 0
         */
-        console.log('undefined == null ', undefined == null);//true
-        console.log('"" == undefined ', "" == undefined);
-        console.log('"" == null ', "" == null);
+        console.log('undefined == null      ', undefined == null);//true
+        console.log('"" == undefined        ', "" == undefined);//false
+        console.log('"" == null             ', "" == null);//false
         let obj2 = {
             valueOf() {
                 return false;
             }
         }
-        console.log('obj == obj2 ', obj == obj2);
-        obj2 = obj;
-        console.log('obj == obj2 ', obj == obj2);
+        console.log("let obj2 = { \n\tvalueOf() { \n\t\treturn false; \n\t} \n};");
+        console.log('obj == obj2            ', obj == obj2);//false
+        console.log('obj2 = obj             ');
+        console.log('obj == obj2            ', obj == obj2);//true
+        console.log('//true +null -> 0      ');
+        console.log('0 >= null              ', 0 >= null)//true +null -> 0
+        console.log('//true +null -> 0      ');
+        console.log('0 <= null              ', 0 <= null)//true +null -> 0
+        console.log('//in == operator null is only equal to undefied null == undefined is true');
+        console.log('0 == null              ', 0 == null)//false because null is only equal to undefied
     </script>
 </html>
