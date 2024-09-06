@@ -6,7 +6,10 @@
         console.log('+"100Hello             ', +"100Hello");
         console.log('10 == [10]             ', 10 == [10]);
         console.log('[10].join()            ', [10].join());
+        console.log('[10].toString()        ', [10].toString());
         /*
+        10 == [10]//toString method in Array, internally call join method
+        Array -> primitive -> Array.join('');
         Array is object. That's why object to primitive
         [10].join()//'10'
         [10].toString()//'10'
