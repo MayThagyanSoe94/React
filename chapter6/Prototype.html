@@ -1,0 +1,18 @@
+<html>
+    <script>
+        let obj = new Object();
+        console.log('Object ', obj);
+        console.log('Object ', obj.toString());
+        console.log('Object Prototype ', Object.prototype.prototype);
+        console.log('Object Prototype ', obj.__proto__);
+
+        let obj2 = Object.create({
+            name: 'may',
+            age: 20
+        });
+        console.log(obj2);
+        console.log('obj 2 ' , obj2.name);
+        obj2.name = 'Gyan';
+        console.log('obj 2 name ', obj2.name);
+    </script>
+</html>

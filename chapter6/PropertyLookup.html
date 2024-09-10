@@ -1,0 +1,31 @@
+<html>
+    <script>
+        let first = {
+            x: 100,
+            y: 25,
+            arr: [10, 20]
+        }
+
+        let second = Object.create(first);
+        let second2 = Object.create(first);
+        second.y = 200;
+
+        let third = Object.create(second);
+        third.z = 300;
+
+        console.log('Third      ', third);
+        console.log('Third z    ', third.z)
+        console.log('Third y    ', third.y);
+        third.y = 50;
+        console.log('Third y    ', third.y);
+        first.x = 500;
+        console.log('Third x    ', third.x);
+        third.arr.push(30);
+        console.log('Third arr  ' , third.arr);//10,20,30
+
+        third.arr = [100];
+        console.log('Third arr  ', third.arr);//100
+        console.log('First arr  ', first.arr);//10,20
+        console.log('Nothing    ', third.nothing);//undefined
+    </script>
+</html>
