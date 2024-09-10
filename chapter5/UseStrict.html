@@ -1,0 +1,47 @@
+<html>
+    <script>
+        //"use strict";
+        //eval = "Hello";
+        //undefined = 'Not Undefined';
+        let obj = {
+            name: 'May',
+            age: 30,
+            name: 'Gyan'
+        }
+        console.log('Obj >>> ', obj);
+        //var top = 10;
+        //let top = 10;
+        console.log('Top ', window.top);
+        console.log('Top ', top == 10);
+
+        //another = 'Hello';
+        //console.log('Another ', another);
+
+        console.log('Another ', window.another);
+        // with(window){
+        //     top = 200;
+        // }
+        function hello(a,/*a*/) {
+            //delete a;
+            // in unstrict mode this is window
+            // in strict mode this is undefined
+            // in strict mode arguments is static copy
+            // in unstrict mode arguments is magic
+            console.log('Arguments ', arguments);
+            arguments[0][0] = 200;
+            console.log('This ', this);
+        }
+        //hello('Hello ', 'World');
+        let arr = [10, 20];
+        hello(arr);
+        const descriptor = Object.getOwnPropertyDescriptor(window, 'top');
+        console.log('descriptor ', descriptor);
+        //top = "Hello";
+        //eval('var d = "Hello";');
+
+        //console.log('DELETE top ', delete top);
+        function hello() {
+            console.log('Hello new function ', arguments.callee , 'caller');
+        }
+    </script>
+</html>
