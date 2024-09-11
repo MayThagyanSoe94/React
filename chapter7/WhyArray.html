@@ -1,0 +1,36 @@
+<html>
+    <script>
+        //variable can store one value
+        /*
+        let name1 = 'A';
+        let name2 = 'B';
+        let name3 = 'C';
+        let name4 = 'D';
+        let name5 = 'E';
+        */
+        //array can store multiple value of any type
+        let ages = [10, 20, 30, 40, 50];
+        console.log('Age            ', ages);
+        let totalAge = 0;
+        for (const age of ages) {
+            totalAge += age
+        }
+        console.log('total Age      ', totalAge);
+        console.log('average Age    ', totalAge / ages.length);
+
+        let data = [...ages];
+        console.log('data           ', data);
+
+        arr = new Array(10);
+        console.log('arr            ', arr);
+
+        arr = new Array(10, 20, 30);
+        console.log('arr            ', arr);
+
+        arr = Array.of(40, 50, 60);
+        console.log('arr of         ', arr);
+
+        arr = Array.from(ages);
+        console.log('arr from  AGE  ', arr);
+    </script>
+</html>
