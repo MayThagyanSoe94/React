@@ -1,5 +1,27 @@
 <html>
     <script>
-        
+        let arr = [10, 1, 20, 30, 40];
+        console.log('arrtoString', arr.toString());
+        console.log('join   ,   ', arr.join(","));
+        console.log("join   '   ", arr.join("'"));
+        console.log('join   a   ', arr.join("a"));
+        console.log('join   ;   ', arr.join(";"));
+
+        let arr2 = Array.of(1, 2, 3);
+        console.log('Array.of   ', arr2);
+
+        let arr3 = Array.from(arr);
+        console.log('Array.from ', arr3);
+
+        console.log('Array.isArray(arr)     ', Array.isArray(arr));
+
+        let obj = {};
+        obj[0] = 10;
+        obj[1] = 20;
+        obj.length = 2;
+        console.log('Array.isArray(obj)     ', Array.isArray(obj));
+
+        let str = 'Hello';
+        console.log('str[0]                 ', str[0]);
     </script>
 </html>
