@@ -1,0 +1,45 @@
+<html>
+    <script>
+        // higher order function
+        function check(fn) {
+            return function (...rest) {
+                if (rest.length < fn.length) {
+                    console.warn('Function ', fn.name, 'expect ', fn.length, ' but found ', rest.length);
+                }
+                return fn(...rest);
+                //console.log('Fn >>> ', fn.name , ', Length    >>> ', fn.length, ', Arg Length   >>>', rest.length);
+            }
+        }
+
+        function double(a) {
+            return a * a;
+        }
+
+        function process(a, b) {
+            /*
+            if (arguments.length < process.length) {
+                console.warn('Function ', arguments.callee.name, 'expect ', process.length, ' but found ', arguments.length);
+            }
+            console.log('function length   ', process.length, 'argument length      ', arguments.length);
+            */
+            console.log('A  ', a, 'B     ', b);
+            return a + b;
+        }
+
+        /*
+        process();
+        process(10);
+        process(10, 20);
+        process(100, 200, 300);
+        */
+        let doubleWithCheck = check(double);
+        console.log('DoubleWithCheck     ', doubleWithCheck());
+        console.log('DoubleWithCheck     ', doubleWithCheck(3));
+
+        let processWithCheck = check(process);
+        console.log('ProcessWithCheck   ', processWithCheck());
+        console.log('ProcessWithCheck   ', processWithCheck(2));
+        console.log('ProcessWithCheck   ', processWithCheck(2, 4));
+        console.log('ProcessWithCheck   ', processWithCheck(2, 4, 6));
+    </script>
+</html>
