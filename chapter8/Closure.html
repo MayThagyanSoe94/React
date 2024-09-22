@@ -1,0 +1,23 @@
+<html>
+    <script>
+        //close over -> closure
+        //1. must have outer function and inner function
+        //2. the inner function use the outer function variable
+        function unique() {
+            let counter = 0;
+            return function inner() {
+                return counter++;
+            }
+        }
+        let id = unique();
+        console.log('typeof id  >>> ', typeof id);
+        console.log('id         >>> ',id());
+        console.log('id         >>> ',id());
+        console.log('id         >>> ',id());
+
+        let another = unique();
+        console.log('another    >>> ',another());
+        console.log('another    >>> ',another());
+        console.log('another    >>> ',another());
+    </script>
+</html>

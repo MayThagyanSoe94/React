@@ -1,0 +1,27 @@
+<html>
+    <script>
+        let num = +prompt('Enter number');
+        let sign = num >= 0 ? 'Positive' : 'Negative';
+        console.log('Sign ', sign);
+
+        function process(maxWidth) {
+            let width = maxWidth || 30;
+            console.log('width process >>> ', width);
+        }
+
+        process();
+        process(20);
+        process(0);// if you give zero but result is 30
+
+        function process1(maxWidth) {//not okay this method
+            //let width = maxWidth === null || maxWidth === undefined || 30;
+            let width = maxWidth ?? 30;
+            console.log('width process1 >>> ', width);
+        }
+        process1();
+        process1(5);
+        process1(0);
+        process1(null);
+        process1(undefined);
+    </script>
+</html>

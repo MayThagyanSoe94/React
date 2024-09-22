@@ -1,0 +1,20 @@
+<html>
+    <script>
+        let arr = [10,20];
+        // let a = arr[0];
+        // let b = arr[1];
+        let [a,b] = arr;
+        let [c,d] = [111,222];
+        console.log('a >>> ',a);
+        console.log('b >>> ',b);
+        console.log('c >>> ',c);
+        console.log('d >>> ',d);
+        // let temp = c;
+        // c = d;
+        // d = temp;
+        [c,d] = [d,c];
+        console.log('after swap');
+        console.log('c >>> ',c);
+        console.log('d >>> ',d);
+    </script>
+</html>

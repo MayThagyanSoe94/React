@@ -1,0 +1,34 @@
+<html>
+    <script>
+        let source = {
+            username: 'tk',
+            secretkey: '12345678',
+            toJSON() {
+                console.log('JSON called');
+                return {
+                    name: this.username
+                }
+            }
+        };
+        let str = JSON.stringify(source);
+        console.log('Str ', str);
+        let obj = JSON.parse(str);
+        console.log('Obj ', obj);
+
+        let obj2 = {
+            x : 10,
+            y :20
+        }
+
+        let obj3 = {
+            z : 30,
+            y : 200
+        }
+
+        let obj4 = {
+            ...obj2,
+            ...obj3
+        }
+        console.log('obj 4 >>> ' , obj4);
+    </script>
+</html>

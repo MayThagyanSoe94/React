@@ -1,0 +1,21 @@
+<html>
+    <script>
+        let arr = [10, 20, 30, 40, 50];
+        let arr2 = arr.map(item => [item, item * item]);
+        let arr3 = arr.map(item => [item, item * item]).flat();
+        let arr4 = arr.flatMap(item => [item, item * 2]);
+        let arr5 = [1,2,3,[4,5,6,[7,8,9,[10,11,12,[13,14,15]]]]].flat();//default is one
+        let arr6 = [1,2,3,[4,5,6,[7,8,9,[10,11,12,[13,14,15]]]]].flat(2);
+        let arr7 = [1,2,3,[4,5,6,[7,8,9,[10,11,12,[13,14,15]]]]].flat(3);
+        let arr8 = [1,2,3,[4,5,6,[7,8,9,[10,11,12,[13,14,15]]]]].flat(4);
+
+        console.log('arr            ', arr);
+        console.log('arr2 map       ', arr2);
+        console.log('arr3 mapflat   ', arr3);
+        console.log('arr4 flatMap   ', arr4);
+        console.log('arr5 flat()    ', arr5);
+        console.log('arr6 flat(2)   ', arr6);
+        console.log('arr7 flat(3)   ', arr7);
+        console.log('arr8 flat(4)   ', arr8);
+    </script>
+</html>

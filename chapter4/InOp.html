@@ -1,0 +1,21 @@
+<html>
+    <script>
+        let obj = {
+            name : 'TK',
+            age : undefined,
+            valueOf(){
+                return true;
+            }
+        };
+        console.log('"name" in obj ' , 'name' in obj);
+        console.log('"toString" in obj ' , 'toString' in obj);
+        let arr = [10,20,30];
+        console.log('o in arr ' , 0 in arr);
+        arr = [,20,30];
+        console.log('o in arr ' , 0 in arr);
+        let str = 'hello';
+        //console.log('"h" in hello ' , 'h' in str);// can't use
+        //console.log('"h" in hello ' , 0 in str);// can't use
+        console.log('"age" in obj ' , "age" in obj);// it check the property only not for value
+    </script>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <script>
+        let obj = {
+            name: 20,
+            address: "place",
+        }
+
+        delete obj.address;
+        console.log('Obj ', obj);
+        console.log('Obj address ', obj.address);
+        console.log('Address in obj ', 'address' in obj);
+
+        let arr = [1, 2, 3];
+        delete arr[2];
+
+        console.log('arr ' , arr);
+        console.log('arr length >>> ' , arr.length);
+    </script>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <script>
+        let a = 2;//primary expression
+        let b = a + 2;//not primary expression
+        let obj = {
+            name : 'May'
+        }
+        let arr = [10,20,30];
+        let hello = function(){
+            console.log("hello")
+        }
+        hello = undefined;
+        let result = hello?.();//function invocation expression
+        console.log('Function invocation Result >>> ',result);
+        //obj = null;
+        console.log('name ',obj?.name);
+        //console.log('obj[name] ',obj?['name']:undefined);
+        console.log('obj[name] ',obj?.['name']);
+    </script>
+</html>

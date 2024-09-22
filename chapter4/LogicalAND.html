@@ -1,0 +1,35 @@
+<html>
+    <script>
+        console.log('false && false ', false && false);
+        console.log('false && true ', false && true);
+        console.log('true && false ', true && false);
+        console.log('true && true ', true && true);
+
+        //LHS is false return LHS
+        let obj = {}// null , undefined , 0 , empty string, NaN
+        console.log('// LHS is false return LHS');
+        console.log('0 && true ', 0 && true); // 0
+        console.log('false && true ', false && true);// false
+        console.log('false && 1 ', false && 1);// false
+        console.log('null && true ', null && true);// null
+        console.log('undefined && true ', undefined && true);// undefined
+
+        //LHS is true return RHS
+        console.log('!!obj ' , !!obj);
+          console.log('1   &&   true ', 1 && true);// true
+        console.log('true  &&   0 ', true && 0);// 0 
+        console.log('true  &&   1 ', true && 1);// 1
+        console.log('obj   &&   true ' , obj && true);
+        console.log('obj   &&   false ' , obj && false);
+        console.log('obj   &&   0 ' , obj && 0);
+        console.log('obj   &&   1 ' , obj && 1);
+        console.log('obj   &&   "zero" ' , obj && 'zero');
+        console.log('obj   &&   "one" ' , obj && 'one');
+        console.log('obj   &&   [] ' , obj && []);
+        console.log('obj   &&   "Hello" ' , obj && 'hello');
+
+        window.Module = window.Module || {};
+        let isRaining = true;
+        isRaining && console.log('Take umbrella');
+    </script>
+</html>

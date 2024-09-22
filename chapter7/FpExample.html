@@ -1,0 +1,40 @@
+<html>
+    <script>
+        let students = [
+            {
+                name: 'Aye Aye',
+                gender: 'Female',
+                age: 25
+            },
+            {
+                name: 'Aung Aung',
+                gender: 'Male',
+                age: 18
+            },
+            {
+                name: 'Mya Mya',
+                gender: 'Female',
+                age: 29
+            },
+            {
+                name: 'Swe Swe',
+                gender: 'Female',
+                age: 20
+            }
+        ];
+        let females = students.filter(student => student.gender == 'Female');
+        console.log('Female List                ', females);
+        let youngest = females.reduce((a, b) => a.age < b.age ? a : b);
+        console.log('Youngest Age               ', youngest);
+
+        let female = students.filter(stu => stu.gender == 'Female')
+            .reduce((a, b) => a.age < b.age ? a : b);
+        console.log('The youngest female        ', female);
+
+        let youngestAge = students.filter(student => student.gender == 'Female')
+            .map(student => student.age)
+            .reduce((a, b) => a < b ? a : b);
+        console.log('The youngest female age    ', youngestAge);
+
+    </script>
+</html>

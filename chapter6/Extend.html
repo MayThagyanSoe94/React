@@ -1,0 +1,26 @@
+<html>
+    <script>
+        let target = { x: 1 }, source = {
+            y: 2, z: 3, address: {
+                city: 'YGN'
+            }
+        }
+        for (let p in source) {
+            target[p] = source[p];
+        }
+        console.log('target ', target);
+
+        let obj = {
+            x: 10
+        }
+
+        let obj2 = Object.assign({
+            y: 20,
+            x: 100
+        }, obj);
+        console.log('obj2 >> ', obj2);
+
+        let obj3 = { ...obj2, ...target };//spread operator
+        console.log('obj3 >> ', obj3);
+    </script>
+</html>

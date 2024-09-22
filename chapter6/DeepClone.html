@@ -1,0 +1,17 @@
+<html>
+    <script>
+        let source = {
+            x: 2,
+            y: 3,
+            address: {
+                city: 'YGN'
+            }
+        };
+        console.log('STR >>>                            ', source)
+        let str = JSON.stringify(source);
+        console.log('STR >>>                            ', str);
+        let obj = JSON.parse(str);
+        console.log('Obj >>>                            ', obj);
+        console.log('obj.address === source.address >>> ', obj.address === source.address);
+    </script>
+</html>

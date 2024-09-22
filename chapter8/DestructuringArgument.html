@@ -1,0 +1,25 @@
+<html>
+    <script>
+        function display(obj) {
+            let name = obj.name;
+            let age = obj.age;
+            console.log('Name   ', name, 'Age   ', age);
+        }
+        display({
+            name: 'May',
+            age: 31
+        });
+
+        function display2({ name, age }) {//let {name, age} = obj
+            console.log('Name   ', name, 'Age   ', age);
+        }
+        display2({
+            name: 'Aung',
+            age: 11
+        });
+        function show([x, y]) {
+            console.log('x  ', x, 'y    ', y)
+        }
+        show([1, 2]);//[x,y] = [1,2]
+    </script>
+</html>

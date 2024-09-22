@@ -1,0 +1,38 @@
+<html>
+    <script>
+        console.log('false ||  false ', false || false);
+        console.log('false ||  true ', false || true);
+        console.log('true  ||  false ', true || false);
+        console.log('true  ||  true ', true || true);
+        //LHS is false return RHS
+        obj = {}// null , undefined , 0 , empty string, NaN
+        console.log('// LHS is false return RHS');
+        console.log('        0 || true      ', 0 || true); // true
+        console.log('    false || true      ', false || true);// true
+        console.log('    false || 1         ', false || 1);// 1
+        console.log('     null || true      ', null || true);// true
+        console.log('undefined || true      ', undefined || true);// true
+        console.log('undefined || hello     ', undefined || 'hello');// hello
+        console.log('    false || undefined ', false || undefined);// undefined
+        console.log('    false || null      ', false || null);// null
+
+        //LHS is true return LHS
+        console.log('obj        ||      true  ', obj || true);//obj
+        console.log('obj        ||      false ', obj || false);//obj
+        console.log('"hello"    ||      false ', "hello" || false);//hello
+
+        window.Module = window.Module || {
+            method() {
+                console.log('Our Module api');
+            }
+        }
+
+        window.Module = window.Module || {
+            method() {
+                console.log('Modify Our Module api');
+            }
+        }
+        Module.method();
+    </script>
+
+</html>

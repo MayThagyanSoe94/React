@@ -1,0 +1,19 @@
+<html>
+    <script>
+        let obj = {
+            _age: 39,
+            get age(){
+                return this._age;
+            },
+            set age(age){
+                console.log('new value      ' , age);
+                if(age > 0 && age <=100){
+                    this._age = age;
+                }
+            }
+        }
+        obj.age = 200;
+        obj.age = 25;
+        console.log('obj.age >>>            ', obj.age);
+    </script>
+</html>
