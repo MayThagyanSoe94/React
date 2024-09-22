@@ -1,0 +1,17 @@
+<html>
+    <script>
+        function constfuncV(v) {
+            return () => v;
+        };
+        console.log(constfuncV(7)());
+
+        let funs = [];
+        //for (var i = 0; i < 10; i++) {
+        //()=>i can use outer scope so can aceess latest value
+        for (let i = 0; i < 10; i++) {//mean -> copy
+            //funs[i] = constfuncV(i);
+            funs[i] = () => i;
+        }
+        console.log("funs[5]", funs[5]());
+    </script>
+</html>
