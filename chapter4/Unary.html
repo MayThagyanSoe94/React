@@ -1,0 +1,34 @@
+<html>
+    <script>
+        let result = +true;//1
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+        result = +'true';//NaN string -> number -> NaN
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+        result = +'';//NaN empty string -> number -> 0
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+        let a = 10;
+        let b = ++a; //a++ -> b = a
+        console.log('A >>> ', a, 'B >>> ', b);//b = 11, a= 11
+
+        b = a++; //b=a -> a++;
+        console.log('A >>> ', a, 'B >>> ', b);//a = 12, b =11
+
+        let obj = {
+            valueOf(){
+                return 3;
+            }
+        }
+        obj ++;
+        console.log('Obj >>> ' , obj);
+        obj = {
+            valueOf(){
+                return '3';
+            }
+        }
+        obj ++;
+        console.log('Obj >>> ' , obj);    
+    </script>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <script>
+        let name = "may";
+        let age = 31;
+        let obj = {
+            name: name,
+            age: age
+        };
+        obj = {
+            name, age
+        }
+        let id = 1;
+        let data = "dynamicProperty";
+        for (let i = 0; i < 5; i++) {
+            obj = {
+                [data + i]: 100
+            };
+            console.log('Obj >>> ', obj);
+        }
+    </script>
+</html>

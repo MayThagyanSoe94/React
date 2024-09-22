@@ -1,0 +1,23 @@
+<html>
+    <script>
+        factorial.cache = {};
+        function factorial(num) {
+            if (factorial.cache[num]) {
+                console.log('factorial.cache[num]   >>> ', num);
+                return factorial.cache[num];
+            } else {
+                let result = 1;
+                console.log('Compute Num            >>> ', num);
+                for (let i = 1; i <= num; i++) {
+                    result *= i;
+                }
+                factorial.cache[num] = result;
+                return result;
+            }
+        }
+        console.log('factorial(1)           >>> ', factorial(1));
+        console.log('factorial(4)           >>> ', factorial(4));
+        console.log('factorial(5)           >>> ', factorial(5));
+        console.log('factorial(4)           >>> ', factorial(4));
+    </script>
+</html>

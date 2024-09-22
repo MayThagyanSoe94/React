@@ -1,0 +1,47 @@
+<html>
+    <script>
+        function Stack() {
+            this.items = [];
+            this.push = function (element) {
+                this.items.push(element);
+            }
+            this.pop = function () {
+                return this.items.pop();
+            }
+        }
+
+        let stack1 = new Stack();
+        stack1.push(10);
+        stack1.push(20);
+
+        let stack2 = new Stack();
+        stack2.push(100);
+        stack2.push(200);
+
+        stack1.items = [];
+
+        console.log('stack1.pop()   ', stack1.pop());
+        console.log('stack2.pop()   ', stack2.pop());
+
+        function CStack() {
+            let items = [];
+            function push(element) {
+                items.push(element);
+            }
+            function pop() {
+                return items.pop();
+            }
+            return {
+                push,
+                pop
+            }
+        }
+        let stack3 = CStack();
+        stack3.push(1000);
+        stack3.push(2000);
+        stack3.items = []; 
+
+        console.log('stack3.pop()   >>> ', stack3.pop());
+        console.log('stack3         >>> ', stack3);
+    </script>
+</html>

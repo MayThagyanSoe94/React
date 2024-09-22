@@ -1,0 +1,52 @@
+<html>
+    <script>
+        let arr = [10, 1, 112, 1001, 20];
+        console.log('arr                                                ', arr);
+        arr.sort();//sort type is lexiographic(string)
+        console.log('arr.sort()                                         ', arr);
+        arr.sort((a, b) => a - b);
+        console.log('arr.sort((a,b) => a-b)                             ', arr);
+
+        let students = [
+            {
+                name: 'Zin Zin',
+                gender: 'Female',
+                age: 20
+            }, {
+                name: 'Aye Aye',
+                gender: 'Female',
+                age: 25
+            },
+            {
+                name: 'Aung Aung',
+                gender: 'Male',
+                age: 18
+            },
+            {
+                name: 'Mya Mya',
+                gender: 'Female',
+                age: 29
+            },
+            {
+                name: 'Swe Swe',
+                gender: 'Female',
+                age: 20
+            }
+        ];
+        /*
+        students.sort((a, b) => a.age - b.age);
+        console.log('students.sort((a, b) => a.age - b.age)     ', students);
+        students.sort((a, b) => {
+            if (a.age - b.age == 0) {
+                return a.name.localeCompare(b.name);
+            } else {
+                return a.age - b.age;
+            }
+        })
+        */
+       students.sort((a,b)=> b.age - a.age);
+       console.log('students.sort((a, b) => b.age - a.age)              ', students);
+       students.reverse();
+       console.log('students.sort((a, b) => b.age - a.age).reverse()    ', students);
+    </script>
+</html>

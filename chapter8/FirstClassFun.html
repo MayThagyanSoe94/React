@@ -1,0 +1,24 @@
+<html>
+    <script>
+        //function as value, first class function
+        // Rule 1, can assign function to variables
+        function hello() {
+            console.log('Hello');
+        }
+        let fun = hello;
+        fun();
+
+        // Rule 2, can assign the function as the parametar
+        function getFun(fn) {
+            fn();
+        }
+        getFun(hello);
+
+        // Rule 3, can return function
+        function getFun2(){
+            return hello;
+        }
+        getFun2()();
+        // if you want to write functional programming the function must be frist class
+    </script>
+</html>

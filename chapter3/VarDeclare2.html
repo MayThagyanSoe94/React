@@ -1,0 +1,26 @@
+<html>
+    <script>
+        let a = '10';
+        let b = 10;
+        var top = 100;
+        function hello(){
+            var top = 100;
+            let x = 'something';
+            console.log('Hello');
+            {
+                //var x = 200;
+                let x = 200;
+                console.log('X 200 ',x);
+                console.log('top == 100',top == 100);
+            }
+            {
+                let x = 300;
+                console.log('X 300 ',x);
+            }            console.log('X something ',x);
+            //let x = 'something';
+        }
+        hello();
+        console.log('top == 100',top==100);
+        console.log('window.top ',window.top);
+    </script>
+</html>

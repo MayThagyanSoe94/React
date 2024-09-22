@@ -1,0 +1,20 @@
+<html>
+    <script>
+        let circle = {
+            radius: 3,
+            /*getArea: function () {
+                return Math.PI * this.radius * this.radius;
+            }*/
+            getArea() {
+                return Math.PI * this.radius * this.radius;
+            },
+
+            get area(){
+                console.log("getter area ");
+                return Math.PI * this.radius * this.radius;
+            }
+        }
+        console.log("Area >>>               ", circle.getArea());
+        console.log("Circle.area >>>        ", circle.area);
+    </script>
+</html>

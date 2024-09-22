@@ -1,0 +1,30 @@
+<html>
+    <script>
+        function greet() {
+            console.log('Hello');
+        }
+        greet();
+
+        let obj = {
+            name: 'May',
+            age: '31',
+            display() {
+                console.log('Name ', this.name, '\r\n', 'Age ', this.age);
+            }
+        }
+        obj.display();
+
+        function Human(name, age) {
+            console.log('Constructure ');
+            this.name = name;
+            this.age = age;
+            this.display = function () {
+                console.log('Name ', this.name, '\r\n', 'Age ', this.age);
+            }
+        }
+        let obj2 = new Human('May', 31);
+        let obj3 = new Human('Aung Aung', 28);
+        obj2.display();
+        obj3.display();
+    </script>
+</html>

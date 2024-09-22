@@ -1,0 +1,72 @@
+<html>
+    <script>
+        let result = 5 / 2;
+        console.log('Result >>> ', result);
+        result = 0 / 0;
+        console.log('Nan == Nan >>> ', result == result);
+        console.log('Typeof Result >>> ', typeof result);
+
+        let a = '10';
+        let b = 20;
+        result = a + b;
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+        a = true;
+        result = a + b;
+        /*
+        number(a)+b
+        */
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+        a = {
+            valueOf() {
+                return '20';
+            }
+        }
+        result = a + b;
+        /*
+        ObjectToPrimitive(a)+b
+        valueof->'20'+b
+        string concat
+        */
+        console.log('Result >>> ', result, 'type of ', typeof result);
+        a = {
+            valueOf() {
+                console.log('Value of ')
+                return new String('20');
+            },
+            toString() {
+                console.log('To String');
+                return true;
+            }
+        }
+        result = a + b;
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+        result = ['20'] + 3;
+        /*
+        ObjectToPrimitive([20])
+        '20'+3
+        */
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+        result = ['20', '10'] + 3;
+        /*
+        ObjectToPrimitive([20,10])
+        '20,10'+3
+        */
+        console.log('Result >>> ', result, 'type of ', typeof result);
+        result = undefined + 3;//NaN
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+        result = null + 3;//3 null is zero
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+        result = 1 + 2 + ' blind mice';
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+        result = 'blind mice ' + 1 + 2;
+        console.log('Result >>> ', result, 'type of ', typeof result);
+
+    </script>
+</html>

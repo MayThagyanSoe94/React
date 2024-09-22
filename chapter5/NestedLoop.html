@@ -1,0 +1,12 @@
+<html>
+    <script>
+        outer:for (let i = 0; i < 5; i++) {//outer loop
+            console.log('Hello ');
+            inner:for (let j = 0; j < 3; j++) {//inner loop
+                if(i == 2)
+                break outer;
+                console.log('   World');
+            }
+        }
+    </script>
+</html>

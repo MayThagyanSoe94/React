@@ -1,0 +1,30 @@
+<html>
+    <script>
+        let obj = {
+            name: 'May',
+            age: '31',
+            display(message) {
+                console.log('Message ', message, '\r\n', 'Name ', this.name, '\r\n', 'Age ', this.age);
+            }
+        }
+        obj.display("Hello");
+        let m = obj.display;// call function but not include obj
+        m("Hi");
+        m.call(obj, 'HI');
+
+        let obj2 = {
+            name: 'Something',
+            age: 100
+        }
+        m.call(obj2, 'Hey');
+        let arr = [10, 2, 20, 1, 50, 100, 205];
+        console.log("Math.max(50,100)   ", Math.max(50, 100));
+        console.log("Math.max(arr)      ", Math.max.apply(null, arr));
+        console.log("Math...            ", Math.max(...arr));
+
+        let newMethod = obj.display.bind(obj2);
+        newMethod('Work with obj 2 bind ');
+        newMethod = obj.display.bind(obj);
+        newMethod('work with obj bind');
+    </script>
+</html>
