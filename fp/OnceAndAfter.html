@@ -1,0 +1,38 @@
+<html></html>
+    <script>
+        // let done = false;
+        // function payment() {
+        //     if (!done) {
+        //         console.log('Payment');
+        //         done = true;
+        //     }
+        // }
+        function payment(card, amount) {
+            console.log('Payment', card, amount);
+        }
+
+        function another() {
+            console.log('Another');
+        }
+        //payment();
+        //payment();
+        function onceAndAfter(fn, after) {
+            let done = false;
+            return function (...rest) {
+                if (!done) {
+                    done = true;
+                    return fn(...rest);
+                }
+                else{
+                    return after(...rest);
+                }
+            }
+        }
+        payment = onceAndAfter(payment, ()=> console.log('Payment have been called previously'));
+        payment('A', 10000);
+        payment('A', 10000);
+        another = onceAndAfter(another, () => console.log('Another have been called previously'));
+        another();
+        another();
+    </script>
+</html>
