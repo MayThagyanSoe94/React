@@ -1,0 +1,27 @@
+<html>
+    <script>
+        function factorial(n) {
+            console.log('Fact compute >>> ', n);
+            let result = 1;
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+        let memonizeFactorial = memonize(factorial)
+        console.log('Fact 4 >>> ', memonizeFactorial(4));
+        console.log('Fact 4 >>> ', memonizeFactorial(4));
+        function memonize(fn) {
+            let cache = {}
+            return function (args) {
+                if (cache[args]) {
+                    return cache[args];
+                } else {
+                    let ret = fn(args);
+                    cache[args] = ret;
+                    return ret;
+                }
+            }
+        }
+    </script>
+</html>
