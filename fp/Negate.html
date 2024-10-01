@@ -2,8 +2,14 @@
     <script>
         let arr = [4, 8, 9, 19, 48, 35];
         const isEven = (n) => n % 2 == 0;
-        const isOdd = (n) => n % 2 != 0;
+        //const isOdd = (n) => n % 2 != 0;
+        function not(fn){
+            return function(...args){
+                return!fn(...args);
+            }
+        }
         console.log('Even List >>> ', arr.filter(isEven));
-        console.log('Odd List >>> ', arr.filter(isOdd));
+        console.log('Odd List function >>> ', arr.filter(not(isEven)));
+        //console.log('Odd List >>> ', arr.filter(isOdd));
     </script>
 </html>
