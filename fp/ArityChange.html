@@ -1,5 +1,23 @@
 <html>
     <script>
-        
+        console.log('parseInt("100") type save >>> ', parseInt('100'));//save type
+        console.log('+"100" type not save >>> ', +'100');
+        console.log('parseInt("100Hello") type save >>> ', parseInt('100Helo'));//save type
+        console.log('+("100Hello") type not save >>> ', +'100Hello');
+
+        let nums = ["100", "2", "300"].map(parseInt);
+        //parseInt(str,base)
+        //map(value, index, array)
+        //parseInt(value,index)200,0/ 0,1/ 110,2
+        console.log('Nums >>> ' , nums);
+        nums = ["200", "1" , "110"].map(parseInt);
+        console.log('Nums >>> ' , nums);
+        nums = ["200", "1" , "110"].map(num => parseInt(num));
+        console.log('Nums >>> ' , nums);
+
+        const unary = (fn)=>(arg)=>fn(arg);
+        nums = ["200", "1" , "110"].map(unary(parseInt));
+        console.log('after Unary Nums >>> ' , nums);
+
     </script>
 </html>
