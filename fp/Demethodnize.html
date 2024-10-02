@@ -1,0 +1,16 @@
+<html>
+    <script>
+        const demethonize = fn => (arg, ...args) => fn.apply(arg, args);
+        const name = 'functional';
+        const result = name.split("").map(x => x.toUpperCase());
+        console.log('Result >>> ', result);
+
+        const map = demethonize(Array.prototype.map);
+        const toUpperCase = demethonize(String.prototype.toLocaleUpperCase);
+
+        const result2 = map(name, toUpperCase);
+        console.log('Result2 >>> ', result2);
+
+        console.log('Result with fun >>> ', Array.prototype.map.apply("hello", [(x) => x.toUpperCase()]));
+    </script>
+</html>
