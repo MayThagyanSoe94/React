@@ -1,0 +1,48 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.0/ramda.min.js"></script>
+    <script>
+        console.log("R.identity >>> ", R.identity(4));
+        console.log("R.add(3) >>> ", R.add(3));
+        console.log("R.add(3)(2) >>> ", R.add(3)(2));
+
+        const equal3 = R.equals(3);
+        console.log('R.equals(3) >>> ', equal3);
+
+        let arr = [3, 3, 3];
+        console.log('R.all >>> ', R.all(equal3)(arr));
+
+        let list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let average = R.converge(R.divide, [R.sum, R.length]);
+        console.log('Average >>> ', average(list));
+
+        const even = x => x % 2 == 0;
+        const noOfEven = R.count(even, list);
+        console.log('noOfEven >>> ', noOfEven);
+
+        const odd = x => x % 2 != 0;
+        const noOfOdd = R.count(odd)(list);
+        console.log('no Of odd >>> ', noOfOdd);
+
+        const defaultTo42 = R.defaultTo(42);
+        console.log('default42 >>> ', defaultTo42(42));
+
+        defaultTo42(undefined);  //=> 42
+        console.log('defaultTo42(undefined) >>> ', defaultTo42(undefined));
+
+        defaultTo42(false);  //=> false
+        console.log('defaultTo42(false) >>> ', defaultTo42(false));
+
+        defaultTo42('Ramda');  //=> 'Ramda'
+        console.log('defaultTo42("Ramda") >>> ', defaultTo42('Ramda'));
+
+        parseInt('string'); //=> results in NaN
+        console.log('parseInt(string) >>> ', parseInt('string'));
+
+        defaultTo42(parseInt('string')); //=> 42
+        console.log('defaultTo42(parseInt("string"))', defaultTo42(parseInt('string')));
+
+        defaultTo42(25);  //=> 25
+        console.log('defaultTo42(25) >>> ', defaultTo42(25));
+
+    </script>
+</html>

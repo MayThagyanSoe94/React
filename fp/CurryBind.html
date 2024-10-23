@@ -1,0 +1,28 @@
+<html>
+    <script>
+        function pipe(...fns) {
+            return function (x) {
+                return fns.reduce((input, fn) => fn(input), x);
+            }
+        }
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        function inc(x) {
+            return x + 1;
+        }
+
+        const curryBind = fn =>
+            fn.length === 0 ? fn() : p => curryBind(fn.bind(null, p));
+        let curryBindAdd = curryBind(add);
+
+        console.log('curryBindAdd(2) >>> ', curryBindAdd(2));
+        console.log('curryBindAdd(2)(3) >>> ', curryBindAdd(2)(3));
+
+        newPipe = pipe(inc, curryBindAdd(2));
+        console.log('pipe(inc, curryBindAdd(2)) >>> ' , newPipe);
+        console.log('newPipe(10) >>> ', newPipe(10));
+    </script>
+</html>

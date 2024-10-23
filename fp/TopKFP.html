@@ -1,0 +1,44 @@
+<html>
+    <script>
+
+        function pipe(...fns) {
+            return function (x) {
+                return fns.reduce((input, fn) => fn(input), x);
+            }
+        }
+
+        function groupByKey(arr) {
+            return arr.reduce((group, item) => {
+                /*
+                if (group[item]) {
+                    group[item]++;
+                } else
+                    group[item] = 1;
+                return group;
+                */
+                return (group[item]) ? (group[item]++, group) : (group[item] = 1, group);
+            }, {});
+        }
+
+        let nums = [2, 2, 1, 1, 2, 2, 1, 3], k = 2;
+
+        let frequency = groupByKey(nums);
+        console.log('frequency >>> ', frequency);
+
+        function sort(arr) {
+            return arr.sort((a, b) => b[1] - a[1]);
+        }
+
+        let freArr = Object.entries(frequency);
+        let sortedArr = sort(freArr);
+        console.log(sortedArr);
+
+        function getElement(arr) {
+            return arr.map(item => item[0]);
+        }
+
+        let element = getElement(sortedArr);
+        console.log('frequent items ', element);
+
+    </script>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <script>
+            function pipe(...fns) {
+                return function (x) {
+                    return fns.reduce((input, fn) => fn(input), x);
+                }
+            }
+
+            // function add(a,b){
+            //     return a+b;
+            // }
+
+            // function add(a){
+            //     return function (b){
+            //         return a+b;
+            //     }
+            // }
+
+            const add = (a) => (b) => a + b;
+
+            function inc(x) {
+                return x + 1;
+            }
+
+            console.log('add >>> ', add(2)(3));
+            let newPipe = pipe(inc, add);
+            console.log('pipe ', newPipe(10)(5));
+            console.log('add >>> ', add(2));
+
+            newPipe = pipe(inc, add(2));
+            console.log('newPipe ', newPipe(10));
+</script>
+</html>
