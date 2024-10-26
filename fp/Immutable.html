@@ -1,0 +1,50 @@
+<html>
+    <script>
+        let obj = {
+            name: "May",
+            age: 31,
+            address: {
+                city: 'Yangon'
+            }
+        }
+        console.log('obj >>> ', obj);
+        Object.freeze(obj);
+        obj.age = 100;
+        console.log("obj after freeze >>> ", obj);
+        let obj2 = { ...obj };
+        console.log('obj2 >>> ', obj2);
+        let obj3 = { ...obj2 };
+        console.log('obj3 shallow copy from obj2 >>> ', obj3);
+        obj2.age = 150;
+        console.log("obj2 >>> ", obj2);
+        console.log("obj3 >>> ", obj3)
+        let obj4 = JSON.stringify(obj3);
+        console.log('obj4 deep copy from obj3 >>>', obj4);
+        obj3.age = 100;
+        console.log("obj3 >>> ", obj3);
+        console.log("obj4 >>> ", obj4);
+
+        const getField = (fieldName) => obj => obj[fieldName];
+        console.log("Name >>> ", getField('name')(obj));
+
+        //obj.address.city = "MDY";
+        const setField = (fieldName) => (value) => (obj) => ({
+            ...obj,
+            [fieldName]: value
+        })
+
+        const setNestedField = (nestedFieldName) => (value) => (obj) => ({
+            ...obj,
+            address: {
+                ...obj.address,
+                [nestedFieldName]: value
+            }
+        });
+
+        let obj5 = setField('name')('Thagyan')(obj);
+        obj5 = setNestedField('city')('MDY')(obj5);
+
+        console.log('obj 5 ', obj5);
+        console.log('obj >>> ', obj);
+    </script>
+</html>

@@ -1,0 +1,34 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.0/ramda.min.js"></script>
+    <script>
+        const k =2;
+        let list = [1, 2, 3, 2, 1, 3, 4, 3, 4, 1, 2];
+        /*
+        let frequencyGroup = R.countBy(R.identity)(list);
+        console.log('frequencyGroup >>> ', frequencyGroup);
+        let frequencyArr = Object.entries(frequencyGroup);
+        console.log('Frequency Arr >>> ',frequencyArr);
+        let tops = R.sort((a,b) => b[1]-a[1])(frequencyArr);
+        console.log('Tops >>> ', tops);
+        tops = R.map(item => item[0]) (tops);
+        let topK = R.take(k,tops);
+        console.log('TopK >>> ',topK);
+        */
+       
+        const log = R.tap(console.log);
+        const topK = R.pipe(
+                        R.countBy(R.identity)
+                        , log
+                        , Object.entries
+                        , log
+                        , R.sort((a, b) => b[1] - a[1])
+                        , log
+                        , R.map(item => item[0])
+                        , log
+                        , R.take(k)
+                        , log
+        )
+        console.log('topK >>> ' , topK(list));
+        
+    </script>
+</html>

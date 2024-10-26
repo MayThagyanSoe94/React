@@ -1,0 +1,34 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.0/ramda.min.js"></script>
+    <script>
+        function factorial(n) {
+            if (n == 0) {
+                return 1;
+            } else {
+                return n * factorial(n - 1);
+            }
+        }
+            console.log('factorial 4 >>> ', factorial(4));
+            const ramdaFact = (n) => R.reduce(R.multiply, 1, R.range(1, n + 1));
+            const log = R.tap(console.log);
+            let fact2 = (n) => R.pipe(
+                            R.inc
+                            , log
+                            , R.range(1)
+                            , log
+                            , R.reduce(R.multiply, 1)
+                            ,log
+                            )(n);
+            console.log("fact2 >>> ", fact2(4));
+            fact2 = R.pipe(
+                            R.inc
+                            , log
+                            , R.range(1)
+                            , log
+                            , R.reduce(R.multiply, 1)
+                            ,log
+                            );
+            console.log("RamdaFact >>> ", ramdaFact(4));
+            console.log("fact2 >>> ", fact2(5));
+    </script>
+</html>

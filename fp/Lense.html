@@ -1,0 +1,41 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.30.0/ramda.min.js"></script>
+    <script>
+        let obj = {
+            name: 'may',
+            age: 30,
+            // address :{
+            //     city: "Yangon"
+            // }
+        }
+
+        console.log('R.prop >>> ' , R.prop('name')(obj));
+
+        console.log('R.path >>> ' , R.path(['address', 'city'])(obj));
+
+        let obj2 = R.assoc('name','Si', obj);
+        console.log('R.assoc obj2 >>> ' , obj2);
+
+        obj2 = R.assoc('age', 31, obj2);
+        console.log('R.assoc obj2 >>> ' , obj2);
+
+        let obj3 = R.assocPath(['address','city'],'YGN',obj2);
+        obj3 = R.assocPath(['address', 'township'], { name: 'Hlaing', postalCode: 2242 }, obj3);
+
+        console.log('R.assocPath obj3 >>> ' , obj3);
+
+        const nameLens = R.lens(R.prop('name'), R.assoc('name'));
+        const view = R.view(nameLens)(obj);
+        console.log('view name>>> ' , view)
+
+        const ageLens = R.lens(R.prop('age'), R.assoc('age'));
+        console.log('view age >>> ' , R.view(ageLens)(obj));
+
+        let obj4 = R.set(nameLens, 'Si')(obj);
+        obj4 = R.set(ageLens, 31)(obj4);
+        console.log('obj 4 >>> ' , obj4);
+
+        let rOver = R.over(nameLens,R.toUpper)(obj);
+        console.log('R.over >>> ', rOver);
+    </script>
+</html>
